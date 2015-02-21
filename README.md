@@ -8,6 +8,14 @@ https://github.com/dfreire/go-dropbox-download/releases/tag/v1.0.0-beta
 
 Unzip the file and place it somewhere on your system's PATH.
 
+## or alternatively, simply use your local go environment
+
+```
+$ go get github.com/dfreire/go-dropbox-download
+$ cd <gopath>/src/github.com/dfreire/go-dropbox-download
+$ go install go-dropbox-download
+```
+
 # Usage
 
 ```
