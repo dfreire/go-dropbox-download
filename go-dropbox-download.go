@@ -16,16 +16,16 @@ func main() {
 	fmt.Println()
 
 	if len(os.Args) != 4 {
-		fmt.Println("Usage: go-dropbox-download <dropbox_folder_url> <local_download_folder> <match_filenames_string>")
+		fmt.Println("Usage: go-dropbox-download <dropbox_folder_url> <local_folder> <match_filenames_string>")
 		return
 	}
 
 	dropboxFolder := os.Args[1]
-	downloadFolder := os.Args[2]
+	localFolder := os.Args[2]
 	matchFileName := os.Args[3]
 
 	fmt.Println("Dropbox folder:", dropboxFolder)
-	fmt.Println("Download folder:", downloadFolder)
+	fmt.Println("Local folder:", localFolder)
 	fmt.Println("Match file names with:", matchFileName)
 	fmt.Println()
 
@@ -35,7 +35,7 @@ func main() {
 		return
 	}
 
-	dir, err := os.Stat(downloadFolder)
+	dir, err := os.Stat(localFolder)
 	if err != nil {
 		fmt.Println("Download folder does not exist.")
 		return
@@ -70,12 +70,12 @@ func main() {
 	})
 
 	for fileName, href := range fileNames {
-		downloadFile(downloadFolder, href, fileName)
+		downloadFile(localFolder, href, fileName)
 	}
 }
 
-func downloadFile(downloadFolder, href, fileName string) {
-	filePath := path.Join(downloadFolder, fileName)
+func downloadFile(localFolder, href, fileName string) {
+	filePath := path.Join(localFolder, fileName)
 	_, err := os.Stat(filePath)
 	if !os.IsNotExist(err) {
 		// file exists
@@ -85,7 +85,7 @@ func downloadFile(downloadFolder, href, fileName string) {
 		fmt.Println("DOWNLOAD", fileName)
 	}
 
-	tmpFilePath := path.Join(downloadFolder, strings.Join([]string{fileName, "tmp"}, "."))
+	tmpFilePath := path.Join(localFolder, strings.Join([]string{fileName, "tmp"}, "."))
 
 	out, err := os.Create(tmpFilePath)
 	defer out.Close()
