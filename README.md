@@ -7,3 +7,10 @@ $ go-dropbox-download <dropbox_folder_link> <local_folder> <match_filenames_stri
 ```
 
 It will skip downloading files that are already present in the local folder.
+
+# Example
+
+```
+$ go-dropbox-download "https://www.dropbox.com/sh/D3mb-t-BKH_aAUQ9/3FK3Txo_4f-rQbdb/MyPhotos?dl=0" "./MyPhotos" ".jpg"
+```
+
