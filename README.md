@@ -14,7 +14,7 @@ It will skip downloading files that are already present in the local folder.
 $ go-dropbox-download "https://www.dropbox.com/sh/D3mb-t-BKH_aAUQ9/3FK3Txo_4f-rQbdb/MyPhotos?dl=0" "./MyPhotos" ".jpg"
 ```
 
-# Instalation
+# Installation
 
 ## Option 1: Install the binary release
 
