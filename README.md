@@ -6,7 +6,7 @@ Download the release zip file for the system of your choice from:
 
 https://github.com/dfreire/go-dropbox-download/releases/tag/v1.0.0-beta
 
-Unzip the file and place it somewhere on your system's path.
+Unzip the file and place it somewhere on your system's PATH.
 
 # Usage
 
