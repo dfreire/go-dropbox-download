@@ -2,13 +2,13 @@ Download files from a shared dropbox folder link.
 
 # Install
 
-Download the release zip file for the system of your choice from:
+## Option 1: instal the binary release
 
-https://github.com/dfreire/go-dropbox-download/releases/tag/v1.0.0-beta
+Download the release zip file for the system of your choice from the [releases page](https://github.com/dfreire/go-dropbox-download/releases/).
 
 Unzip the file and place it somewhere on your system's PATH.
 
-## or alternatively, simply use your local go environment
+## Option 2: use your local go environment
 
 ```
 $ go get github.com/dfreire/go-dropbox-download
