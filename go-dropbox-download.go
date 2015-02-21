@@ -16,7 +16,7 @@ func main() {
 	fmt.Println()
 
 	if len(os.Args) != 4 {
-		fmt.Println("Usage: go-dropbox-download <dropbox_folder_url> <local_download_folder> <math_string>")
+		fmt.Println("Usage: go-dropbox-download <dropbox_folder_url> <local_download_folder> <match_filenames_string>")
 		return
 	}
 
