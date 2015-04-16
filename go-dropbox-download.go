@@ -88,14 +88,12 @@ func downloadFile(localFolder, href, fileName string) {
 	tmpFilePath := path.Join(localFolder, strings.Join([]string{fileName, "tmp"}, "."))
 
 	out, err := os.Create(tmpFilePath)
-	defer out.Close()
 	if err != nil {
 		fmt.Print(err)
 		return
 	}
 
 	resp, err := http.Get(href)
-	defer resp.Body.Close()
 	if err != nil {
 		fmt.Print(err.Error())
 		return
@@ -106,6 +104,8 @@ func downloadFile(localFolder, href, fileName string) {
 		fmt.Print(err.Error())
 		return
 	}
+	out.Close()
+	resp.Body.Close()
 
 	err = os.Rename(tmpFilePath, filePath)
 	if err != nil {
